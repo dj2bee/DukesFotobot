@@ -3,9 +3,10 @@ module.exports = function(router, bot) {
 		console.log(req.body);
 		var chatId = '1384527',
 			user = req.body.sender.login,
-			repo = req.body.repository.full_name;
-		bot.sendMessage(chatId, user + ' pushed to ' + repo);
-		bot.sendMessage('-63867549', user + ' pushed to ' + repo);
+			repoName = req.body.repository.full_name,
+			repoUrl = req.body.repository.url;
+		bot.sendMessage(chatId, user + ' pushed to ' + repoName + '(' + repoUrl + ')');
+		bot.sendMessage('-63867549', user + ' pushed to ' + repoName + '(' + repoUrl + ')');
 		res.send('ok');
 	});
 
