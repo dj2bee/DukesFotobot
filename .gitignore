@@ -1,2 +1,6 @@
 /token.txt
 /node_modules
+/download/fullsize/*
+!/download/fullsize/.placeholder
+/download/thumbnails/*
+!/download/thumbnails/.placeholder

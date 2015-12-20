@@ -1,16 +1,14 @@
-var bot;
+var path = './download';    // TODO: Auf NAS umleiten
 
-var callback = function(msg){
-    console.log(msg);
-    var antwort = 'Danke.';
-    var path = '.'; //TODO
-    bot.sendMessage(msg.chat.id, antwort);
-    bot.downloadFile(msg.photo[0].file_id, path + '/thumbnails/');
-    bot.downloadFile(msg.photo[msg.photo.length-1].file_id, path + '/fullsize/');
-};
+module.exports = function(bot) {
+    var callback = function(msg){
+        bot.downloadFile(msg.photo[0].file_id, path + '/thumbnails');
+        bot.downloadFile(msg.photo[msg.photo.length-1].file_id, path + '/fullsize')
+            .then(function() {
+                bot.sendMessage(msg.chat.id, 'Foto gespeichert!');
+            });
+    };
 
-module.exports = function(telegramBot) {
-    bot = telegramBot;
     bot.on('photo', callback);
 };
 
