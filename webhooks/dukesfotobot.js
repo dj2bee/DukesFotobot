@@ -11,9 +11,9 @@ module.exports = function(router, bot) {
 	});
 
 	// Debug only
-	//router.get('/dukesfotobot', function(req, res) {
-	//	bot.sendMessage('1384527', 'Webhook foo');
-	//	res.send('foo');
-	//});
+	router.get('/dukesfotobot', function(req, res) {
+		bot.sendMessage('1384527', 'Webhook foo');
+		res.send('foo');
+	});
 
 };
