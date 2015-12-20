@@ -5,7 +5,7 @@ module.exports = function(router, bot) {
 			user = req.body.sender.login,
 			repoName = req.body.repository.full_name,
 			repoUrl = req.body.repository.url,
-			commitsCount = req.body.commits.length();
+			commitsCount = req.body.commits.length;
 		bot.sendMessage(chatId, user + ' pushed to ' + repoName + ' (' + commitsCount + ' commits)');
 		bot.sendMessage('-63867549', user + ' pushed to ' + repoName + ' (' + commitsCount + ' commits)');
 		res.send('ok');
