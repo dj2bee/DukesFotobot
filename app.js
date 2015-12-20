@@ -17,6 +17,9 @@ bot.on('message', function(msg) {
 			case '/touch':
 				bot.sendMessage(msg.chat.id, 'Patsch! Kalte Nase trifft duftende Hand <3');
 				break;
+			case '/whtsp':
+				bot.sendMessage(msg.chat.id, 'https://www.tagesschau.de/xml/rss2');
+				break;
 			default:
 				bot.sendMessage(msg.chat.id, 'Das Kommando kenne ich noch nicht.');
 		}
