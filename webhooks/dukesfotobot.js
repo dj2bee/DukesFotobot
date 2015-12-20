@@ -17,8 +17,10 @@ module.exports = function(router, bot) {
 		}
 
 
-		bot.sendMessage(chatId, user + ' pushed to ' + repoName + ' (' + commitsCount + ' commits)\n\n' + commitInfo);
-		bot.sendMessage('-63867549', user + ' pushed to ' + repoName + ' (' + commitsCount + ' commits)\n\n' + commitInfo);
+		bot.sendMessage(chatId, user + ' pushed to ' + repoName + ' (' + commitsCount + ' commits)\n\n' + commitInfo
+			+ '\n\nRepository: ' + repoUrl);
+		bot.sendMessage('-63867549', user + ' pushed to ' + repoName + ' (' + commitsCount + ' commits)\n\n' + commitInfo
+			+ '\n\nRepository: ' + repoUrl);
 		res.send('ok');
 	});
 
