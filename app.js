@@ -27,4 +27,7 @@ bot.on('message', function(msg) {
 	console.log(msg.from.first_name + ' (' + msg.from.username + ')' + ': ' + msg.text);
 });
 
+require('./handler/onPhoto')(bot);
+
+
 console.log('DukesFotoBot wach, gefüttert und schnüffelbereit!\n');
