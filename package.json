@@ -19,6 +19,6 @@
   "author": "dj2bee",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.13.3"
+    "node-telegram-bot-api": "^0.17.0"
   }
 }

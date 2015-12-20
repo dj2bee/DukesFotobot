@@ -1,6 +1,6 @@
 var fs = require('fs'),
 	telegramBot = require('node-telegram-bot-api'),
-	token = fs.readFileSync('./config/token', 'utf8'),
+	token = fs.readFileSync('./token.txt', 'utf8'),
 	bot = new telegramBot(token, {polling: true});
 
 bot.on('message', function(msg) {
