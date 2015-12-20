@@ -2,12 +2,23 @@ module.exports = function(router, bot) {
 	router.post('/dukesfotobot', function(req, res) {
 		console.log(req.body);
 		var chatId = '1384527',
-			user = req.body.sender.login,
-			repoName = req.body.repository.full_name,
-			repoUrl = req.body.repository.url,
-			commitsCount = req.body.commits.length;
-		bot.sendMessage(chatId, user + ' pushed to ' + repoName + ' (' + commitsCount + ' commits)');
-		bot.sendMessage('-63867549', user + ' pushed to ' + repoName + ' (' + commitsCount + ' commits)');
+			sender = req.body.sender,
+			repository = req.body.repository,
+			commits = req.body.commits,
+			user = sender.login,
+			repoName = repository.full_name,
+			repoUrl = repository.url,
+			commitsCount = commits.length;
+
+		var counter = 1,
+			commitInfo = '';
+		for(var key in commits) {
+			commitInfo += counter++ + ') ' + commits[key].message + '\n';
+		}
+
+
+		bot.sendMessage(chatId, user + ' pushed to ' + repoName + ' (' + commitsCount + ' commits)\n\n' + commitInfo);
+		bot.sendMessage('-63867549', user + ' pushed to ' + repoName + ' (' + commitsCount + ' commits)\n\n' + commitInfo);
 		res.send('ok');
 	});
 
