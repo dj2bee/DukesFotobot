@@ -1,0 +1,24 @@
+{
+  "name": "dukesfotobot",
+  "version": "0.0.1",
+  "description": "Telegram-Bot for saving photos to NAS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Telegram",
+    "Duke",
+    "Foto",
+    "Photo",
+    "Bot",
+    "NAS",
+    "DRY",
+    "Synology"
+  ],
+  "author": "dj2bee",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
