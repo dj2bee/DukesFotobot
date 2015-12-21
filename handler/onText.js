@@ -1,6 +1,5 @@
 module.exports = function(bot) {
 	var callback = function(msg) {
-		console.log(msg);
 		var text = msg.text;
 		if(text[0] == '/') {
 			var command = text.split(' ');
