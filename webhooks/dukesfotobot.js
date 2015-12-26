@@ -1,6 +1,5 @@
 module.exports = function(router, bot) {
 	router.post('/dukesfotobot', function(req, res) {
-		console.log(req.body);
 		var chatId = '1384527',
 			sender = req.body.sender,
 			repository = req.body.repository,
